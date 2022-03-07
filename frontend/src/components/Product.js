@@ -28,7 +28,7 @@ const Product = ({product}) => {
 
         <Card.Text as='h3'>${product.price}</Card.Text>
         
-        <p>By: {product.brand}</p>
+        <p>Painter: {product.brand}</p>
 
       </Card.Body>
 
