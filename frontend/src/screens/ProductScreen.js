@@ -17,13 +17,15 @@ const ProductScreen = () => {
     }
 
     fetchProduct()
-  }, [])
+  }, [params])
 
 // Params = parameters stored in product.js - can be like id or location. Parameteres are all a collection.    
   // params is coming from actual params by making a call to the API and it will come back as response Json and then call the function setProduct as part of useState. Now you're done hooking things up
 //  find method, within the aray it will loop through and find the element we are looking for. We are looking for product, and in this case product.id. FInd will loop through each element in products.js which is coming thorugh the params above. This guy will go find the product and find the id. Then we display it below the HTML required for it to display on the React page.
 
   // this is a function page, we have to return something here
+
+  // params in fetchProduct will refresh and fetch new id (products) which is what params stands for. It will rerun useEffect to fetch whatever new param value change it is you want.
 
   
   return (

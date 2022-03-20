@@ -1,6 +1,9 @@
+// we're remnoving _id: because now mongodb will automatically worry and give us the id instead of us doing it. And their id won't just be #1 or #2, it's more sophiscated of an product id. 
+
+// no user column here, it's in the seeder file/function. 
+
 const products = [
   {
-    _id: '1',
     name: 'Cinnamon',
     image: '/images/cinnamon.jpg',
     description:
@@ -13,7 +16,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '2',
     name: 'Jalapeno Loco',
     image: '/images/jalapeno-loco.jpg',
     description:
@@ -26,7 +28,6 @@ const products = [
     numReviews: 8,
   },
   {
-    _id: '3',
     name: 'Samba Me',
     image: '/images/samba-me-1.jpg',
     description:
@@ -39,7 +40,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '4',
     name: 'Slanted Writing',
     image: '/images/slanted-writing.jpg',
     description:
@@ -52,7 +52,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '5',
     name: 'Walnut Chips',
     image: '/images/walnut-chips.jpg',
     description:
@@ -65,7 +64,6 @@ const products = [
     numReviews: 10,
   },
   {
-    _id: '6',
     name: 'Wildly Floral',
     image: '/images/wildly-floral.jpg',
     description:
