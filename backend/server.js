@@ -1,7 +1,9 @@
 import express from 'express'
 import dotenv from 'dotenv'
-import products from './data/products.js'
 import connectDB from './config/db.js'
+import productRoutes from './routes/productRoutes.js'
+import { notFound, errorHandler } from './middleware/errorMiddleware.js'
+
 
 //writing our own API. We need routes (URL aka API is a URL), and in plain JS we need to use the list right below:
 // const express = require('express')
@@ -11,7 +13,9 @@ import connectDB from './config/db.js'
 // referring accessbility to products in data folder
 
 const app = express()
+// express is a big routing library inside Express.
 dotenv.config()
+connectDB()
 
 // An instance of a express (bus or train) - we want to use Express under the name app.
 
@@ -21,20 +25,20 @@ app.get('/', (req, res) => {
   res.json({'msg': 'Hello World'})
 })
 
-
-app.get('/api/products', (req, res) => {
-  res.json(products)
-})
+// app.get('/api/products', (req, res) => {
+  // res.json(products)
+// })
 // a function to call below and waiting for a response (asking for products and want products back using routes)
-
 // : means it's a parameter coming in. Aka :id which means show us the product parameter of the result
 
+// app.get('/api/products/:id', (req, res) => {
+  // const product = products.find((p) => p._id === req.params.id);
+  // res.json(product);
+// })
 
-app.get('/api/products/:id', (req, res) => {
-  const product = products.find((p) => p._id === req.params.id);
-  res.json(product);
-})
-
+app.use('/api/products', productRoutes)
+app.use(errorHandler)
+app.use(notFound)
 
 
 const PORT = process.env.PORT || 5000
