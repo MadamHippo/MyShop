@@ -4,6 +4,10 @@ import { Link, useParams } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
 import Rating from '../components/Rating';
 
+// Use State hook, store state information within the component so the compoenent can use it. 
+// Now pass the State information to the other components (as many components as I want). Globally sharing the State with the other components of this app = REDUX!! It's called Redux. State is temp. storage of data. Now Redux is a GLOBAL memory, a temporary store, it's not a database.
+
+// Redux = a way to share data across Components. High-level overview = 1. At component 2. Action is triggered by data and pass to Reducer 3. Reducer is listening and writing it to the store. 4. Data in store is available for Components to use.
 
 const ProductScreen = () => {
   const params = useParams();
